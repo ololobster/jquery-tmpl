@@ -1,4 +1,4 @@
-jQuery Templates plugin 1.0.0
+jQuery Templates plugin 1.0.1
 ====
 This is the fork of jQuery Templates that we use internally here at Kanban Solutions. We have fixed all known and encountered bugs as well as changing the syntax from the standard
 

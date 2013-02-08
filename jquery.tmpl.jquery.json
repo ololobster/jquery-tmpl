@@ -22,11 +22,12 @@
   "licenses": [
     {
       "type": "MIT",
+      "url": "http://jquery.org/license"
     }
   ],
   "bugs": "https://github.com/KanbanSolutions/jquery-tmpl/issues",
   "homepage": "https://github.com/KanbanSolutions/jquery-tmpl",
-  "docs": "https://github.com/KanbanSolutions/jquery-tmpl"
+  "docs": "https://github.com/KanbanSolutions/jquery-tmpl",
   "dependencies": {
     "jquery": ">=1.6"
   }
