@@ -10,7 +10,7 @@
   "keywords": [
     "templating",
     "jquery",
-    "plugin",
+    "plugin"
   ],
   "dependencies": {
     "jquery": ">=1.7"
