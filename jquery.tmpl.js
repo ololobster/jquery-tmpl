@@ -1,7 +1,6 @@
 /*!
- * $ Templates Plugin 1.1
+ * $ Templates Plugin 1.0.4
  * https://github.com/KanbanSolutions/jquery-tmpl
- * Requires $ 1.4.2
  *
  * Copyright Software Freedom Conservancy, Inc.
  * Dual licensed under the MIT or GPL Version 2 licenses.
@@ -357,12 +356,14 @@
             }
 
             var tag = $.tmpl.tag[ type ], def, expr, exprAutoFnDetect;
-            if(!tag) {
+            if(!tag && window.console && console.group) {
                 console.group("Exception");
                 console.error(markup);
                 console.error('Unknown tag: ', type);
                 console.error(all);
                 console.groupEnd("Exception");
+            }
+            if(!tag) {
                 return "');__.push('";
             }
             def = tag._default || [];
