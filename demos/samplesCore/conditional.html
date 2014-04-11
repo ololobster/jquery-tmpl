@@ -25,13 +25,13 @@ var movies = [
 <script id="movieTemplate" type="text/x-jquery-tmpl">
 <li>
 	Title: ${Name}.
-	{{if Languages}}
+	{%if Languages%}
 		(Alternative languages: ${Languages}).
-	{{else Subtitles}}
+	{%elif Subtitles%}
 		(Original language only. Subtitles in ${Subtitles}).
-	{{else}}
+	{%else%}
 		(Original version only, without subtitles).
-	{{/if}}
+	{%/if%}
 </li>
 </script>
 

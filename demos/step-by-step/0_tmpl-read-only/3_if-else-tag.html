@@ -11,7 +11,7 @@
 <a href="../../step-by-step.html">Home</a><br />
 <a href="3_if-else-tag-source.html">Source</a>
 
-<h3>Demo: Using {{if}} and {{else}} to render conditional sections.</h3>
+<h3>Demo: Using {%if%} and {%else%} to render conditional sections.</h3>
 
 <!--=================== Demo Section ===================-->
 
@@ -19,13 +19,13 @@
 	<tr>
 		<td>${Title}</td>
 		<td>
-			{{if Languages}}
+			{%if Languages%}
 				Alternative languages: <em>${Languages}</em>.
-			{{else Subtitles}}
+			{%elif Subtitles%}
 				Original language only... <br/>Subtitles in <em>${Subtitles}</em>.
-			{{else}}
+			{%else%}
 				Original version only, without subtitles.
-			{{/if}}
+			{%/if%}
 		</td>
 	</tr>
 </script>

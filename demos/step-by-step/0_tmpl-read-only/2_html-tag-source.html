@@ -19,11 +19,11 @@
 <a href="../../step-by-step.html">Home</a><br />
 <a href="2_html-tag.html">Run</a>
 
-<h3>Demo: Using ${} or {{html}} to render data values or expressions</h3>
+<h3>Demo: Using ${} or {%html%} to render data values or expressions</h3>
 
 <ul>
-<li>${} is equivalent to {{= }}. It HTML encodes. (Better security, but slight perf cost)</li>
-<li>{{html}} does not encode. Used to render values that include html markup</li>
+<li>${} is equivalent to {%= %}. It HTML encodes. (Better security, but slight perf cost)</li>
+<li>{%html%} does not encode. Used to render values that include html markup</li>
 </ul><br />
 
 <!--=================== Demo Section ===================-->
@@ -31,7 +31,7 @@
 <script id="movieTemplate" type="text/x-jquery-tmpl">
 	<tr>
 		<td>${Title}</td>
-		<td class="synopsis">{{html Synopsis}}</td>
+		<td class="synopsis">{%html Synopsis%}</td>
 	</tr>
 </script>
 

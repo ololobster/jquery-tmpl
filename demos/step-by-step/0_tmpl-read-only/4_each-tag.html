@@ -11,7 +11,7 @@
 <a href="../../step-by-step.html">Home</a><br />
 <a href="4_each-tag-source.html">Source</a>
 
-<h3>Demo: Using {{each}} to render repeating sections.</h3>
+<h3>Demo: Using {%each%} to render repeating sections.</h3>
 
 <!--=================== Demo Section ===================-->
 
@@ -20,9 +20,9 @@
 		<td>${Title}</td>
 		<td>Languages:
 			<em>
-				{{each Languages}}
+				{%each Languages%}
 					${$value.Name}
-				{{/each}}
+				{%/each%}
 			</em>
 		</td>
 	</tr>

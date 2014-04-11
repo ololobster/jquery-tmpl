@@ -22,15 +22,15 @@
 		<td>${Title}</td>
 		<td><b>Languages:</b>
 			<em>
-				{{each Languages}}
-					${$value.Name}{{if $index < Languages.length - 2}}, {{else $index === Languages.length - 2}} and {{/if}}
-				{{/each}}
+				{%each Languages%}
+					${$value.Name}{%if $index < Languages.length - 2%}, {%else $index === Languages.length - 2%} and {%/if%}
+				{%/each%}
 			</em><br/><br/>
 			<b>Subtitles:</b>
 			<em>
-				{{each( i, lang ) Subtitles}}
+				{%each( i, lang ) Subtitles%}
 					${namePlusSeparator( lang.Name, i, Subtitles.length )}
-				{{/each}}
+				{%/each%}
 			</em>
 		</td>
 	</tr>
@@ -93,15 +93,15 @@
 	&lt;td>${Title}&lt;/td>
 	&lt;td>&lt;b>Languages:&lt;/b>
 		&lt;em>
-			{{each Languages}}
-				${$value.Name}{{if $index &lt; Languages.length - 2}}, {{else $index === Languages.length - 2}} and {{/if}}
-			{{/each}}
+			{%each Languages%}
+				${$value.Name}{%if $index &lt; Languages.length - 2%}, {%else $index === Languages.length - 2%} and {%/if%}
+			{%/each%}
 		&lt;/em>&lt;br/>&lt;br/>
 		&lt;b>Subtitles:&lt;/b>
 		&lt;em>
-			{{each( i, lang ) Subtitles}}
+			{%each( i, lang ) Subtitles%}
 				${namePlusSeparator( lang.Name, i, Subtitles.length )}
-			{{/each}}
+			{%/each%}
 		&lt;/em>
 	&lt;/td>
 &lt;/script></pre>

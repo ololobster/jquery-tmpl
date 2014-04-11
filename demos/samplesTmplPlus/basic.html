@@ -63,13 +63,13 @@ function index( array ) {
 
 jQuery(function(){
 	// A template string
-	var tmpl = '<li><a href="${url}">${getName()}</a> {{if $item.showCities}}(${cityJoin()}){{/if}}</li>';
+	var tmpl = '<li><a href="${url}">${getName()}</a> {%if $item.showCities%}(${cityJoin()}){%/if%}</li>';
 
 	// Renders one LI, filled with data, then appends it into the UL
 	$("ul").append( tmpl, dataObject, null );
 
 	// Store a string as a compiled template for later use
-	$.template( "myTmpl", '<li>My template: <a href="${url}">${getName()}</a> {{if $item.showCities}}(${cityJoin()}){{/if}}</li>' );
+	$.template( "myTmpl", '<li>My template: <a href="${url}">${getName()}</a> {%if $item.showCities%}(${cityJoin()}){%/if%}</li>' );
 
 	// Render stored template and insert after target.
 	// Target wrapped set has more than one element, so rendered template cloned into two places in DOM
@@ -85,11 +85,11 @@ jQuery(function(){
 
 <script id="sometmpl" type="text/x-jquery-tmpl">
 	<li>${index($item.array)} of ${$item.array.length}) <a href="${url}">${getName()}</a>
-	{{if $item.showCities}}
-		Cities: {{each cities}} ${this} {{/each}}
-	{{else}}
+	{%if $item.showCities%}
+		Cities: {%each cities%} ${this} {%/each%}
+	{%else%}
 		No Cities
-	{{/if}}
+	{%/if%}
 	</li>
 </script>
 

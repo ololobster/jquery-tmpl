@@ -16,7 +16,7 @@
 <a href="../../step-by-step.html">Home</a><br />
 <a href="1_tree-view-using-tmpl-tag-source.html">Source</a>
 
-<h3>Tree view: using recursive nested {{tmpl}} tags.</h3>
+<h3>Tree view: using recursive nested {%tmpl%} tags.</h3>
 
 <!--=================== Demo Section ===================-->
 
@@ -24,17 +24,17 @@
 
 <script id="folderTemplate" type="text/x-jquery-tmpl">
 	<li>
-		{{if hasContent($data)}}
+		{%if hasContent($data)%}
 			<span class="toggle">${$data.expanded ? "-" : "+"}</span>
-		{{/if}}
+		{%/if%}
 		<span>${name}</span>
 	</li>
-	{{if expanded}}
+	{%if expanded%}
 		<li>
-			<ul>{{tmpl(getFolderItems(name)) "#itemTemplate"}}</ul>
-			<ul>{{tmpl($data.folders || []) "#folderTemplate"}}</ul>
+			<ul>{%tmpl(getFolderItems(name)) itemTemplate%}</ul>
+			<ul>{%tmpl($data.folders || []) folderTemplate%}</ul>
 		</li>
-	{{/if}}
+	{%/if%}
 </script>
 
 <script id="itemTemplate" type="text/x-jquery-tmpl">
