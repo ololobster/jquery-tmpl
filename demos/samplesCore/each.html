@@ -69,11 +69,11 @@ function alternate( item, array ) {
 
 <script id="tmplPeople" type="text/x-jquery-tmpl">
 	<tr class="${alternate($data, people)}"><td colspan="2"><a href="${url}">${getName()}</a></td></tr>
-	{{each cities}}
+	{%each cities%}
 		<tr class="cityseparator"><td colspan="2"></td></tr>
 		<tr class="${alternate($data, people)}"><td colspan="2"><b><i>City ${index($value, cities)}:</i></b></td></tr>
 		<tr class="${alternate($data, people)}"><td><b>${name}</b></td><td>${state}</td></tr>
-	{{/each}}
+	{%/each%}
 	<tr class="separator"><td colspan="2"></td></tr>
 </script>
 

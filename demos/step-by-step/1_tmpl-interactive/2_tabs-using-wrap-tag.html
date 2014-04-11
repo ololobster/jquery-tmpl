@@ -23,20 +23,20 @@
 <a href="../../step-by-step.html">Home</a><br />
 <a href="2_tabs-using-wrap-tag-source.html">Source</a>
 
-<h3>Tab View: Using {{wrap}} for template composition incorporating wrapped HTML</h3>
+<h3>Tab View: Using {%wrap%} for template composition incorporating wrapped HTML</h3>
 
 <!--=================== Demo Section ===================-->
 
 <script id="movieTemplate" type="text/x-jquery-tmpl">
 	<h2>${Title}</h2>
 
-	{{wrap "#tabsTemplate"}}
+	{%wrap tabsTemplate%}
 		<h3>Details</h3>
 		<div>
 
 			Title: <span>${Title}</span><br/>
 			<h4>Languages:</h4>
-			{{each Languages}}<span>${$value.Name}</span><br/>{{/each}}
+			{%each Languages%}<span>${$value.Name}</span><br/>{%/each%}
 
 		</div>
 
@@ -58,21 +58,21 @@
 			</ul>
 
 		</div>
-	{{/wrap}}
+	{%/wrap%}
 </script>
 
 <script id="tabsTemplate" type="text/x-jquery-tmpl">
 	<table class="tabsView"><tbody>
 		<tr>
-			{{each $item.html("h3", true)}}
+			{%each $item.html("h3", true)%}
 				<th class="header_${$index === selectedTab}">
 					${$value}
 				</th>
-			{{/each}}
+			{%/each%}
 		</tr>
 		<tr><td colspan='${$item.html("h3").length}'>
 			<div class="body">
-				{{html $item.html("div")[selectedTab]}}
+				{%html $item.html("div")[selectedTab]%}
 			</div>
 		</td></tr>
 	</tbody></table>

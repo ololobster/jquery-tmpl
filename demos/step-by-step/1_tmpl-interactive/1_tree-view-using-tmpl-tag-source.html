@@ -18,7 +18,7 @@
 <a href="../../step-by-step.html">Home</a><br />
 <a href="1_tree-view-using-tmpl-tag.html">Run</a>
 
-<h3>Tree view: using recursive nested {{tmpl}} tags.</h3>
+<h3>Tree view: using recursive nested {%tmpl%} tags.</h3>
 
 <!--=================== Demo Section ===================-->
 
@@ -26,17 +26,17 @@
 
 <script id="folderTemplate" type="text/x-jquery-tmpl">
 	<li>
-		{{if hasContent($data)}}
+		{%if hasContent($data)%}
 			<span class="toggle">${$data.expanded ? "-" : "+"}</span>
-		{{/if}}
+		{%/if%}
 		<span>${name}</span>
 	</li>
-	{{if expanded}}
+	{%if expanded%}
 		<li>
-			<ul>{{tmpl(getFolderItems(name)) "#itemTemplate"}}</ul>
-			<ul>{{tmpl($data.folders || []) "#folderTemplate"}}</ul>
+			<ul>{%tmpl(getFolderItems(name)) itemTemplate%}</ul>
+			<ul>{%tmpl($data.folders || []) folderTemplate%}</ul>
 		</li>
-	{{/if}}
+	{%/if%}
 </script>
 
 <script id="itemTemplate" type="text/x-jquery-tmpl">
@@ -135,17 +135,17 @@ var movies = [
 <h4>HTML:</h4>
 <pre class="brush: xml;">&lt;script id="folderTemplate" type="text/x-jquery-tmpl">
 	&lt;li>
-		{{if hasContent($data)}}
+		{%if hasContent($data)%}
 			&lt;span class="toggle">${$data.expanded ? "-" : "+"}&lt;/span>
-		{{/if}}
+		{%/if%}
 		&lt;span>${name}&lt;/span>
 	&lt;/li>
-	{{if expanded}}
+	{%if expanded%}
 		&lt;li>
-			&lt;ul>{{tmpl(getFolderItems(name)) "#itemTemplate"}}&lt;/ul>
-			&lt;ul>{{tmpl($data.folders || []) "#folderTemplate"}}&lt;/ul>
+			&lt;ul>{%tmpl(getFolderItems(name)) itemTemplate%}&lt;/ul>
+			&lt;ul>{%tmpl($data.folders || []) folderTemplate%}&lt;/ul>
 		&lt;/li>
-	{{/if}}
+	{%/if%}
 &lt;/script>
 
 &lt;script id="itemTemplate" type="text/x-jquery-tmpl">

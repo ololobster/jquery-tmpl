@@ -20,15 +20,15 @@
 		<td>${Title}</td>
 		<td><b>Languages:</b>
 			<em>
-				{{each Languages}}
-					${$value.Name}{{if $index < Languages.length - 2}}, {{else $index === Languages.length - 2}} and {{/if}}
-				{{/each}}
+				{%each Languages%}
+					${$value.Name}{%if $index < Languages.length - 2%}, {%else $index === Languages.length - 2%} and {%/if%}
+				{%/each%}
 			</em><br/><br/>
 			<b>Subtitles:</b>
 			<em>
-				{{each( i, lang ) Subtitles}}
+				{%each( i, lang ) Subtitles%}
 					${namePlusSeparator( lang.Name, i, Subtitles.length )}
-				{{/each}}
+				{%/each%}
 			</em>
 		</td>
 	</tr>
